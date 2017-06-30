@@ -234,3 +234,280 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/yii-blog/index.php?r=lookup
 ---
+2017/06/30 11:01:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database. The SQL statement executed was: INSERT INTO 'tbl_post' ("title", "content", "tags", "status") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /home/gab/workspace/yii/blog/protected/controllers/PostController.php (68)
+in /home/gab/workspace/yii/blog/index.php (13)
+2017/06/30 11:01:23 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database. The SQL statement executed was: INSERT INTO 'tbl_post' ("title", "content", "tags", "status") VALUES (:yp0, :yp1, :yp2, :yp3) in /home/gab/workspace/yii/1.1/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /home/gab/workspace/yii/1.1/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /home/gab/workspace/yii/1.1/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(68): CActiveRecord->save()
+#3 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionCreate()
+#4 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/create')
+#14 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/create
+HTTP_REFERER=http://192.168.1.106/yii-blog/index.php?r=post/create
+---
+2017/06/30 11:04:14 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database. The SQL statement executed was: UPDATE 'tbl_post' SET "id"=:yp0, "title"=:yp1, "content"=:yp2, "tags"=:yp3, "status"=:yp4, "create_time"=:yp5, "update_time"=:yp6, "author_id"=:yp7 WHERE 'tbl_post'."id"=1.
+in /home/gab/workspace/yii/blog/protected/controllers/PostController.php (92)
+in /home/gab/workspace/yii/blog/index.php (13)
+2017/06/30 11:04:14 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database. The SQL statement executed was: UPDATE 'tbl_post' SET "id"=:yp0, "title"=:yp1, "content"=:yp2, "tags"=:yp3, "status"=:yp4, "create_time"=:yp5, "update_time"=:yp6, "author_id"=:yp7 WHERE 'tbl_post'."id"=1 in /home/gab/workspace/yii/1.1/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /home/gab/workspace/yii/1.1/framework/db/ar/CActiveRecord.php(1756): CDbCommand->execute()
+#1 /home/gab/workspace/yii/1.1/framework/db/ar/CActiveRecord.php(1130): CActiveRecord->updateByPk('1', Array)
+#2 /home/gab/workspace/yii/1.1/framework/db/ar/CActiveRecord.php(811): CActiveRecord->update(NULL)
+#3 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(92): CActiveRecord->save()
+#4 [internal function]: PostController->actionUpdate('1')
+#5 /home/gab/workspace/yii/1.1/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#6 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#7 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#11 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#14 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('update')
+#16 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/update')
+#17 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/update&id=1
+HTTP_REFERER=http://192.168.1.106/yii-blog/index.php?r=post/update&id=1
+---
+2017/06/30 11:05:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: tbl_post.author_id. The SQL statement executed was: INSERT INTO 'tbl_post' ("title", "content", "tags", "status") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /home/gab/workspace/yii/blog/protected/controllers/PostController.php (68)
+in /home/gab/workspace/yii/blog/index.php (13)
+2017/06/30 11:05:32 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: tbl_post.author_id. The SQL statement executed was: INSERT INTO 'tbl_post' ("title", "content", "tags", "status") VALUES (:yp0, :yp1, :yp2, :yp3) in /home/gab/workspace/yii/1.1/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /home/gab/workspace/yii/1.1/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /home/gab/workspace/yii/1.1/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(68): CActiveRecord->save()
+#3 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionCreate()
+#4 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/create')
+#14 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/create
+HTTP_REFERER=http://192.168.1.106/yii-blog/index.php?r=post/create
+---
+2017/06/30 11:06:06 [error] [exception.CException] CException: Tag and its behaviors do not have a method or closure named "updateFrequency". in /home/gab/workspace/yii/1.1/framework/base/CComponent.php:266
+Stack trace:
+#0 /home/gab/workspace/yii/1.1/framework/db/ar/CActiveRecord.php(229): CComponent->__call('updateFrequency', Array)
+#1 /home/gab/workspace/yii/blog/protected/models/Post.php(161): CActiveRecord->__call('updateFrequency', Array)
+#2 /home/gab/workspace/yii/1.1/framework/db/ar/CActiveRecord.php(1103): Post->afterSave()
+#3 /home/gab/workspace/yii/1.1/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#4 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(68): CActiveRecord->save()
+#5 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionCreate()
+#6 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#10 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('create')
+#15 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/create')
+#16 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#17 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/create
+HTTP_REFERER=http://192.168.1.106/yii-blog/index.php?r=post/create
+---
+2017/06/30 11:13:43 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in /home/gab/workspace/yii/1.1/framework/web/CController.php:337
+Stack trace:
+#0 /home/gab/workspace/yii/1.1/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#4 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#7 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/view')
+#10 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/view
+---
+2017/06/30 11:23:57 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /home/gab/workspace/yii/blog/protected/controllers/PostController.php:70
+Stack trace:
+#0 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(48): PostController->loadModel()
+#1 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionView()
+#2 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#6 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/view')
+#12 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/view&id=3
+---
+2017/06/30 11:24:22 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /home/gab/workspace/yii/blog/protected/controllers/PostController.php:70
+Stack trace:
+#0 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(48): PostController->loadModel()
+#1 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionView()
+#2 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#6 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/view')
+#12 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/view&id=
+---
+2017/06/30 11:24:33 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /home/gab/workspace/yii/blog/protected/controllers/PostController.php:70
+Stack trace:
+#0 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(48): PostController->loadModel()
+#1 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionView()
+#2 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#6 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/view')
+#12 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/view&id=3
+---
+2017/06/30 11:24:41 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /home/gab/workspace/yii/blog/protected/controllers/PostController.php:70
+Stack trace:
+#0 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(48): PostController->loadModel()
+#1 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionView()
+#2 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#6 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/view')
+#12 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/view&id=2
+---
+2017/06/30 11:25:46 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /home/gab/workspace/yii/blog/protected/controllers/PostController.php:70
+Stack trace:
+#0 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(48): PostController->loadModel()
+#1 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionView()
+#2 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#6 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/view')
+#12 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/view&id=1
+---
+2017/06/30 11:27:23 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /home/gab/workspace/yii/blog/protected/controllers/PostController.php:70
+Stack trace:
+#0 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(48): PostController->loadModel()
+#1 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionView()
+#2 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#6 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/view')
+#12 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/view&id=1
+---
+2017/06/30 11:27:24 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /home/gab/workspace/yii/blog/protected/controllers/PostController.php:70
+Stack trace:
+#0 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(48): PostController->loadModel()
+#1 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionView()
+#2 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#6 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/view')
+#12 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/view&id=1
+---
+2017/06/30 11:28:00 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /home/gab/workspace/yii/blog/protected/controllers/PostController.php:70
+Stack trace:
+#0 /home/gab/workspace/yii/blog/protected/controllers/PostController.php(48): PostController->loadModel()
+#1 /home/gab/workspace/yii/1.1/framework/web/actions/CInlineAction.php(49): PostController->actionView()
+#2 /home/gab/workspace/yii/1.1/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 /home/gab/workspace/yii/1.1/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/gab/workspace/yii/1.1/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#6 /home/gab/workspace/yii/1.1/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/gab/workspace/yii/1.1/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/gab/workspace/yii/1.1/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/gab/workspace/yii/1.1/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/gab/workspace/yii/1.1/framework/web/CWebApplication.php(141): CWebApplication->runController('post/view')
+#12 /home/gab/workspace/yii/1.1/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /home/gab/workspace/yii/blog/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii-blog/index.php?r=post/view&id=3
+---
+2017/06/30 11:51:17 [warning] [application] Failed to set unsafe attribute "id" of "Post".
+in /home/gab/workspace/yii/blog/protected/controllers/PostController.php (178)
+in /home/gab/workspace/yii/blog/index.php (13)
+2017/06/30 11:51:19 [warning] [application] Failed to set unsafe attribute "id" of "Post".
+in /home/gab/workspace/yii/blog/protected/controllers/PostController.php (178)
+in /home/gab/workspace/yii/blog/index.php (13)
