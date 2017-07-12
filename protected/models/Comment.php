@@ -38,6 +38,7 @@ class Comment extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('content, author, email', 'required'),
+			array('status', 'in', 'range'=>array(1,2)),
 			array('author, email, url', 'length', 'max'=>128),
 			array('email', 'email'),
 			array('url', 'url'),
@@ -137,10 +138,14 @@ class Comment extends CActiveRecord
 	 * @return string the permalink URL for this comment
 	 */
 	public function getUrl($post=null) {
-		if($post===null){
-			$post=$this->post;
-		}
-		return $post->url.'#c'.$this->id;
+// 		if($post===null){
+// 			$post=$this->post;
+// 		}
+// 		return $post->url.'#c'.$this->id;
+
+		return Yii::app()->createUrl('comment/view', array(
+			'id'=>$this->id,
+		));
 	}
 	
 	/**
