@@ -8,6 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Web Application',
+	'defaultController' => 'post',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -39,16 +40,18 @@ return array(
 		),
 
 		// uncomment the following to enable URLs in path-format
-		/*
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				'post/<id:\d+>/<title:.*?>' => 'post/view',
+				'posts/<tag:.*?>' => 'post/index',
+				'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 			),
 		),
-		*/
+			
+		'cache' => array(
+			'class' => 'CDbCache',
+		),
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),

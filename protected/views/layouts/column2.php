@@ -9,9 +9,11 @@
 	<div id="sidebar">
 	<?php if(!Yii::app()->user->isGuest) $this->widget('UserMenu'); ?>
 	
-	<?php $this->widget('TagCloud', array(
-        'maxTags'=>Yii::app()->params['tagCloudCount'],
-    )); ?>
+	<?php if($this->beginCache('tagCloud', array('duration'=>60))) { ?>
+		<?php $this->widget('TagCloud', array(
+	        'maxTags'=>Yii::app()->params['tagCloudCount'],
+	    )); ?>
+   	<?php $this->endCache(); } ?>
     
     <?php $this->widget('RecentComments', array(
         'maxComments'=>Yii::app()->params['recentCommentCount'],
